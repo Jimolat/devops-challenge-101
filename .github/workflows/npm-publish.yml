@@ -10,7 +10,7 @@ on:
     branches: [main]
 
 jobs:
-  continous_integration:
+  build:
     runs-on: ubuntu-latest
     env:
       working-directory: /codebase/rdicidr-0.1.0/
