@@ -14,14 +14,16 @@ jobs:
       working-directory: ./codebase/rdicidr-0.1.0/
     steps:
       - uses: actions/checkout@v3
-      - name: working directory
-        run: |
-          ls -R
-        working-directory: ${{env.working-directory}}
       - uses: actions/setup-node@v3
         with:
           node-version: 15
-      - run: npm install
+      - name: working directory
+        run: |
+          ls -R
+        working-directory: ${{env.working-directory}}      
+      - run: |
+          npm install
+        working-directory: ${{env.working-directory}} 
       - run: |
           npm run lint
         working-directory: ${{env.working-directory}}
